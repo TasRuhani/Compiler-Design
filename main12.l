@@ -1,3 +1,5 @@
+/* Valid Expression and Valid Parenthesis */
+/* Definition Section */
 %{
 #include<stdio.h>
 #include<string.h>
@@ -5,8 +7,8 @@
 int pflag = 0, exflag = 0, error = 0;
 %}
 
+/* Rule Section */
 %%
-
 "("         { pflag++; }
 ")"         {
                 pflag--;
@@ -24,6 +26,7 @@ int pflag = 0, exflag = 0, error = 0;
 
 %%
 
+/* Main Section */
 int main() {
     printf("Enter the Expression:\n");
     yylex();
