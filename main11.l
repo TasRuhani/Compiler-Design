@@ -6,8 +6,8 @@
 #include <string.h>
 
 int flag = 0, count = 0;           // Flag to detect repetition
-char last_word[100] = ""; // Stores the last word
-char word[3][100]; // Stores the last word
+char last_word[100] = "";          // Stores the last word
+char word[3][100];                 // Stores the last word
 %}
 
 /* Rule Section */

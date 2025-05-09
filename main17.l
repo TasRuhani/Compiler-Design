@@ -1,4 +1,4 @@
-/* DFA to accept valid Python Variables Name */
+/* NFA that accepts strings with the 3rd last symbol is a over {a,b} */
 
 /* Definition Section */
 %{
@@ -8,7 +8,7 @@ int flag = 0;
 
 /* Rule Section */
 %%
-[^a-zA-Z] { flag++; }
+^[ab]*a[ab][ab]$  { flag++; }
 %%
 
 /* Main Section */
@@ -16,13 +16,13 @@ int main() {
     printf("Enter the String: ");
     yylex();
     if (flag == 1){
-        printf("Accepted.");
+        printf("Accepted\n");
     } else {
-        printf("Rejected.");
+        printf("Rejected\n.");
     }
     return 0;
 }
 
 int yywrap(){
-    return 0;
+    return 1;
 }
